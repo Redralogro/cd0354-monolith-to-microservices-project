@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build_and_push:
     docker:
-      - image: ubuntu-2204:2022.04.2
+      - image: cimg/go:1.17
     environment:
       IMAGE_VERSION: v1
       DOCKER_REPO: longvd99
@@ -13,6 +13,10 @@ jobs:
       - setup_remote_docker:
           version: edge
 
+      - run:
+          name: Install Docker client
+          command: apk add docker-cli
+          
       - run:
           name: Login to Docker Hub
           command: |
