@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Build and tag reverseproxy image
           command: |
-            docker build -t ${DOCKER_REPO}/reverseproxy:$IMAGE_VERSION ./reverseproxy
+            docker build -t ${DOCKER_REPO}/reverseproxy:$IMAGE_VERSION ./udagram-reverseproxy
 
       # Push images to Docker Hub
       - run:
