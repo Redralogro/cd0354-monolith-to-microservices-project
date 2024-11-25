@@ -15,7 +15,7 @@ jobs:
 
       - run:
           name: Install Docker client
-          command: apk add docker-cli
+          command: apt install docker-cli
           
       - run:
           name: Login to Docker Hub
