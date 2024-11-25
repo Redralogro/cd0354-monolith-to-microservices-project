@@ -3,7 +3,8 @@ version: 2.1
 jobs:
   build_and_push:
     docker:
-      - image: cimg/go:1.17
+      # - image: cimg/go:1.17
+      - image: cimg/base:current
     environment:
       IMAGE_VERSION: v1
       DOCKER_REPO: longvd99
@@ -13,9 +14,9 @@ jobs:
       - setup_remote_docker:
           version: edge
 
-      - run:
-          name: Install Docker client
-          command: apt install docker-cli
+      # - run:
+      #     name: Install Docker client
+      #     command: apt install docker-cli
           
       - run:
           name: Login to Docker Hub
