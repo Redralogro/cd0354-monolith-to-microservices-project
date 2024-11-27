@@ -30,22 +30,22 @@ jobs:
       - run:
           name: Build and tag udagram-api-user image
           command: |
-            docker build -t ${DOCKER_REPO}/udagram-api-user:$IMAGE_VERSION ../udagram-api-user
+            docker build -t ${DOCKER_REPO}/udagram-api-user:$IMAGE_VERSION ./udagram-api-user
 
       - run:
           name: Build and tag udagram-api-feed image
           command: |
-            docker build -t ${DOCKER_REPO}/udagram-api-feed:$IMAGE_VERSION ../udagram-api-feed
+            docker build -t ${DOCKER_REPO}/udagram-api-feed:$IMAGE_VERSION ./udagram-api-feed
 
       - run:
           name: Build and tag udagram-frontend image
           command: |
-            docker build -t ${DOCKER_REPO}/udagram-frontend:$IMAGE_VERSION ../udagram-frontend
+            docker build -t ${DOCKER_REPO}/udagram-frontend:$IMAGE_VERSION ./udagram-frontend
 
       - run:
           name: Build and tag reverseproxy image
           command: |
-            docker build -t ${DOCKER_REPO}/reverseproxy:$IMAGE_VERSION ../reverseproxy
+            docker build -t ${DOCKER_REPO}/reverseproxy:$IMAGE_VERSION ./udagram-reverseproxy
 
       # Push images to Docker Hub
       - run:
